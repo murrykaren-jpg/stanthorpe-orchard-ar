@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Stanthorpe Orchard AR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        #splash {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #FFB6C1 0%, #98FB98 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            transition: opacity 0.5s;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        #splash h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        #startButton {
+            padding: 15px 40px;
+            font-size: 1.1em;
+            background: white;
+            color: #FF69B4;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+        
+        #startButton:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div id="splash">
+        <h1>🌸 🍎 🌸</h1>
+        <button id="startButton" onclick="startAR()">Begin Experience</button>
+    </div>
+
+    <a-scene
+        id="arScene"
+        embedded
+        arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;"
+        vr-mode-ui="enabled: false"
+        renderer="logarithmicDepthBuffer: true; precision: medium;"
+        style="display: none;">
+        
+        <!-- Apple Blossom 1 - transforms to red apple -->
+        <a-entity position="1 4 -5">
+            <a-entity
+                id="blossom1"
+                geometry="primitive: sphere; radius: 0.15"
+                material="color: #FFB6C1; opacity: 0.8; transparent: true"
+                animation="property: position; to: 1 -2 -5; dur: 8000; loop: true; easing: easeInOutQuad"
+                animation__rotate="property: rotation; to: 360 360 0; dur: 8000; loop: true; easing: linear"
+                animation__sway="property: position; to: 1.5 4 -5; dur: 2000; loop: true; dir: alternate; easing: easeInOutSine">
+                <!-- Petal details -->
+                <a-entity
+                    geometry="primitive: sphere; radius: 0.08"
+                    material="color: #FFFFFF; opacity: 0.6; transparent: true"
+                    position="0.1 0 0">
+                </a-entity>
+            </a-entity>
+        </a-entity>
+
+        <!-- Apple Blossom 2 - stays as blossom -->
+        <a-entity position="-1.5 3.5 -6">
+            <a-entity
+                geometry="primitive: sphere; radius: 0.12"
+                material="color: #FFFFFF; opacity: 0.7; transparent: true"
+                animation="property: position; to: -1.5 -2 -6; dur: 9000; loop: true; easing: easeInOutQuad"
+                animation__rotate="property: rotation; to: -360 360 0; dur: 9000; loop: true; easing: linear"
+                animation__sway="property: position; to: -2 3.5 -6; dur: 2500; loop: true; dir: alternate; easing: easeInOutSine">
+                <a-entity
+                    geometry="primitive: sphere; radius: 0.06"
+                    material="color: #FFB6C1; opacity: 0.5; transparent: true"
+                    position="0.08 0.05 0">
+                </a-entity>
+            </a-entity>
+        </a-entity>
+
+        <!-- Apple Blossom 3 - transforms to green apple -->
+        <a-entity position="2 5 -7">
+            <a-entity
+                id="blossom3"
+                geometry="primitive: sphere; radius: 0.18"
+                material="color: #FFC0CB; opacity: 0.75; transparent: true"
+                animation="property: position; to: 2 -2 -7; dur: 10000; loop: true; easing: easeInOutQuad"
+                animation__rotate="property: rotation; to: 360 -360 360; dur: 10000; loop: true; easing: linear"
+                animation__sway="property: position; to: 2.8 5 -7; dur: 3000; loop: true; dir: alternate; easing: easeInOutSine">
+                <a-entity
+                    geometry="primitive: sphere; radius: 0.09"
+                    material="color: #FFFFFF; opacity: 0.7; transparent: true"
+                    position="-0.1 0.05 0">
+                </a-entity>
+            </a-entity>
+        </a-entity>
+
+        <!-- Apple Blossom 4 -->
+        <a-entity position="0 4.5 -4">
+            <a-entity
+                geometry="primitive: sphere; radius: 0.14"
+                material="color: #FFFFFF; opacity: 0.8; transparent: true"
+                animation="property: position; to: 0 -2 -4; dur: 7500; loop: true; easing: easeInOutQuad"
+                animation__rotate="property: rotation; to: 360 360 360; dur: 7500; loop: true; easing: linear"
+                animation__sway="property: position; to: -0.5 4.5 -4; dur: 2200; loop: true; dir: alternate; easing: easeInOutSine">
+                <a-entity
+                    geometry="primitive: sphere; radius: 0.07"
+                    material="color: #FFB6C1; opacity: 0.6; transparent: true"
+                    position="0.1 -0.05 0">
+                </a-entity>
+            </a-entity>
+        </a-entity>
+
+        <!-- Apple Blossom 5 - transforms to red apple -->
+        <a-entity position="-2.5 3.8 -5.5">
+            <a-entity
+                id="blossom5"
+                geometry="primitive: sphere; radius: 0.16"
+                material="color: #FFE4E1; opacity: 0.85; transparent: true"
+                animation="property: position; to: -2.5 -2 -5.5; dur: 8500; loop: true; easing: easeInOutQuad"
+                animation__rotate="property: rotation; to: -360 -360 0; dur: 8500; loop: true; easing: linear"
+                animation__sway="property: position; to: -3 3.8 -5.5; dur: 2800; loop: true; dir: alternate; easing: easeInOutSine">
+                <a-entity
+                    geometry="primitive: sphere; radius: 0.08"
+                    material="color: #FFC0CB; opacity: 0.5; transparent: true"
+                    position="0.08 0 0.05">
+                </a-entity>
+            </a-entity>
+        </a-entity>
+
+        <!-- Apple Blossom 6 -->
+        <a-entity position="1.5 5.2 -6.5">
+            <a-entity
+                geometry="primitive: sphere; radius: 0.13"
+                material="color: #FFC0CB; opacity: 0.7; transparent: true"
+                animation="property: position; to: 1.5 -2 -6.5; dur: 11000; loop: true; easing: easeInOutQuad"
+                animation__rotate="property: rotation; to: 360 0 360; dur: 11000; loop: true; easing: linear"
+                animation__sway="property: position; to: 2.2 5.2 -6.5; dur: 3500; loop: true; dir: alternate; easing: easeInOutSine">
+                <a-entity
+                    geometry="primitive: sphere; radius: 0.065"
+                    material="color: #FFFFFF; opacity: 0.8; transparent: true"
+                    position="-0.08 0.04 0">
+                </a-entity>
+            </a-entity>
+        </a-entity>
+
+        <!-- Apple Blossom 7 - transforms to green apple -->
+        <a-entity position="-0.5 4.2 -5">
+            <a-entity
+                id="blossom7"
+                geometry="primitive: sphere; radius: 0.17"
+                material="color: #FFFFFF; opacity: 0.75; transparent: true"
+                animation="property: position; to: -0.5 -2 -5; dur: 9500; loop: true; easing: easeInOutQuad"
+                animation__rotate="property: rotation; to: -360 360 -360; dur: 9500; loop: true; easing: linear"
+                animation__sway="property: position; to: -1.2 4.2 -5; dur: 2600; loop: true; dir: alternate; easing: easeInOutSine">
+                <a-entity
+                    geometry="primitive: sphere; radius: 0.085"
+                    material="color: #FFE4E1; opacity: 0.6; transparent: true"
+                    position="0.09 -0.03 0.02">
+                </a-entity>
+            </a-entity>
+        </a-entity>
+
+        <!-- Apple Blossom 8 -->
+        <a-entity position="3 4 -8">
+            <a-entity
+                geometry="primitive: sphere; radius: 0.15"
+                material="color: #FFB6C1; opacity: 0.65; transparent: true"
+                animation="property: position; to: 3 -2 -8; dur: 12000; loop: true; easing: easeInOutQuad"
+                animation__rotate="property: rotation; to: 360 360 0; dur: 12000; loop: true; easing: linear"
+                animation__sway="property: position; to: 3.5 4 -8; dur: 4000; loop: true; dir: alternate; easing: easeInOutSine">
+                <a-entity
+                    geometry="primitive: sphere; radius: 0.075"
+                    material="color: #FFFFFF; opacity: 0.7; transparent: true"
+                    position="0.1 0.02 -0.05">
+                </a-entity>
+            </a-entity>
+        </a-entity>
+
+        <a-entity camera></a-entity>
+    </a-scene>
+
+    <script>
+        function startAR() {
+            document.getElementById('splash').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('splash').style.display = 'none';
+                document.getElementById('arScene').style.display = 'block';
+                
+                // Transform some blossoms to apples after a delay
+                setTimeout(transformToApples, 4000);
+            }, 500);
+        }
+        
+        function transformToApples() {
+            // Transform blossom 1 to red apple
+            const blossom1 = document.querySelector('#blossom1');
+            if (blossom1) {
+                blossom1.setAttribute('material', 'color: #DC143C; opacity: 0.9; transparent: true');
+                blossom1.setAttribute('geometry', 'radius: 0.2');
+            }
+            
+            // Transform blossom 3 to green apple
+            setTimeout(() => {
+                const blossom3 = document.querySelector('#blossom3');
+                if (blossom3) {
+                    blossom3.setAttribute('material', 'color: #90EE90; opacity: 0.9; transparent: true');
+                    blossom3.setAttribute('geometry', 'radius: 0.22');
+                }
+            }, 2000);
+            
+            // Transform blossom 5 to red apple
+            setTimeout(() => {
+                const blossom5 = document.querySelector('#blossom5');
+                if (blossom5) {
+                    blossom5.setAttribute('material', 'color: #FF6B6B; opacity: 0.85; transparent: true');
+                    blossom5.setAttribute('geometry', 'radius: 0.21');
+                }
+            }, 3000);
+            
+            // Transform blossom 7 to green apple
+            setTimeout(() => {
+                const blossom7 = document.querySelector('#blossom7');
+                if (blossom7) {
+                    blossom7.setAttribute('material', 'color: #98FB98; opacity: 0.9; transparent: true');
+                    blossom7.setAttribute('geometry', 'radius: 0.19');
+                }
+            }, 4500);
+            
+            // Repeat the cycle
+            setTimeout(() => {
+                // Turn apples back to blossoms
+                if (blossom1) blossom1.setAttribute('material', 'color: #FFB6C1; opacity: 0.8; transparent: true');
+                if (blossom3) blossom3.setAttribute('material', 'color: #FFC0CB; opacity: 0.75; transparent: true');
+                if (blossom5) blossom5.setAttribute('material', 'color: #FFE4E1; opacity: 0.85; transparent: true');
+                if (blossom7) blossom7.setAttribute('material', 'color: #FFFFFF; opacity: 0.75; transparent: true');
+                
+                // Start the transformation cycle again
+                setTimeout(transformToApples, 4000);
+            }, 12000);
+        }
+    </script>
+</body>
+</html>
