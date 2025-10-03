@@ -68,126 +68,116 @@
         renderer="logarithmicDepthBuffer: true;"
         style="display: none;">
         
-        <!-- BIG Apple Blossom 1 - RIGHT IN FRONT -->
-        <a-entity position="0 0 -3">
-            <a-sphere
-                id="blossom1"
-                radius="0.5"
-                color="#FFB6C1"
-                opacity="0.8"
-                transparent="true"
-                animation="property: position; to: 0 -2 -3; dur: 6000; loop: true; easing: easeInOutQuad"
-                animation__rotate="property: rotation; to: 360 360 0; dur: 6000; loop: true">
-            </a-sphere>
+        <!-- Blossom 1 - 5 petals arranged in flower shape -->
+        <a-entity id="blossom1" position="0 0 -3"
+                  animation="property: position; to: 0 -3 -3; dur: 6000; loop: true; easing: easeInOutQuad"
+                  animation__rotate="property: rotation; to: 0 360 0; dur: 6000; loop: true">
+            <!-- Center -->
+            <a-sphere radius="0.1" color="#FFFF99" position="0 0 0"></a-sphere>
+            <!-- Petals -->
+            <a-sphere radius="0.15" color="#FFB6C1" position="0.2 0 0" scale="1.5 1 1"></a-sphere>
+            <a-sphere radius="0.15" color="#FFC0CB" position="-0.2 0 0" scale="1.5 1 1"></a-sphere>
+            <a-sphere radius="0.15" color="#FFB6C1" position="0 0.2 0" scale="1 1.5 1"></a-sphere>
+            <a-sphere radius="0.15" color="#FFC0CB" position="0 -0.2 0" scale="1 1.5 1"></a-sphere>
+            <a-sphere radius="0.15" color="#FFFFFF" position="0 0 0.1" scale="1 1 1.5"></a-sphere>
         </a-entity>
 
-        <!-- BIG Apple Blossom 2 - LEFT -->
-        <a-entity position="-2 1 -3">
-            <a-sphere
-                radius="0.4"
-                color="#FFFFFF"
-                opacity="0.7"
-                transparent="true"
-                animation="property: position; to: -2 -2 -3; dur: 7000; loop: true; easing: easeInOutQuad"
-                animation__rotate="property: rotation; to: -360 360 0; dur: 7000; loop: true">
-            </a-sphere>
+        <!-- Blossom 2 -->
+        <a-entity id="blossom2" position="-2 1 -3"
+                  animation="property: position; to: -2 -3 -3; dur: 7000; loop: true; easing: easeInOutQuad"
+                  animation__rotate="property: rotation; to: 0 -360 0; dur: 7000; loop: true">
+            <!-- Center -->
+            <a-sphere radius="0.08" color="#FFFF99" position="0 0 0"></a-sphere>
+            <!-- Petals -->
+            <a-sphere radius="0.12" color="#FFFFFF" position="0.15 0 0" scale="1.5 1 1"></a-sphere>
+            <a-sphere radius="0.12" color="#FFE4E1" position="-0.15 0 0" scale="1.5 1 1"></a-sphere>
+            <a-sphere radius="0.12" color="#FFFFFF" position="0 0.15 0" scale="1 1.5 1"></a-sphere>
+            <a-sphere radius="0.12" color="#FFE4E1" position="0 -0.15 0" scale="1 1.5 1"></a-sphere>
+            <a-sphere radius="0.12" color="#FFC0CB" position="0 0 0.1" scale="1 1 1.5"></a-sphere>
         </a-entity>
 
-        <!-- BIG Apple Blossom 3 - RIGHT - transforms to green apple -->
-        <a-entity position="2 0.5 -3">
-            <a-sphere
-                id="blossom3"
-                radius="0.45"
-                color="#FFC0CB"
-                opacity="0.75"
-                transparent="true"
-                animation="property: position; to: 2 -2 -3; dur: 8000; loop: true; easing: easeInOutQuad"
-                animation__rotate="property: rotation; to: 360 -360 360; dur: 8000; loop: true">
-            </a-sphere>
+        <!-- Blossom 3 - will transform to apple -->
+        <a-entity id="blossom3" position="2 0.5 -3"
+                  animation="property: position; to: 2 -3 -3; dur: 8000; loop: true; easing: easeInOutQuad"
+                  animation__rotate="property: rotation; to: 0 360 0; dur: 8000; loop: true">
+            <!-- Center -->
+            <a-sphere radius="0.09" color="#FFFF99" position="0 0 0" id="b3center"></a-sphere>
+            <!-- Petals -->
+            <a-sphere radius="0.13" color="#FFC0CB" position="0.17 0 0" scale="1.5 1 1" id="b3p1"></a-sphere>
+            <a-sphere radius="0.13" color="#FFB6C1" position="-0.17 0 0" scale="1.5 1 1" id="b3p2"></a-sphere>
+            <a-sphere radius="0.13" color="#FFC0CB" position="0 0.17 0" scale="1 1.5 1" id="b3p3"></a-sphere>
+            <a-sphere radius="0.13" color="#FFB6C1" position="0 -0.17 0" scale="1 1.5 1" id="b3p4"></a-sphere>
+            <a-sphere radius="0.13" color="#FFE4E1" position="0 0 0.1" scale="1 1 1.5" id="b3p5"></a-sphere>
         </a-entity>
 
-        <!-- BIG Apple Blossom 4 - VERY CLOSE -->
-        <a-entity position="0.5 1.5 -2">
-            <a-sphere
-                radius="0.35"
-                color="#FFE4E1"
-                opacity="0.8"
-                transparent="true"
-                animation="property: position; to: 0.5 -2 -2; dur: 5500; loop: true; easing: easeInOutQuad"
-                animation__rotate="property: rotation; to: 360 360 360; dur: 5500; loop: true">
-            </a-sphere>
+        <!-- Blossom 4 -->
+        <a-entity id="blossom4" position="0.5 1.5 -2"
+                  animation="property: position; to: 0.5 -3 -2; dur: 5500; loop: true; easing: easeInOutQuad"
+                  animation__rotate="property: rotation; to: 0 -360 0; dur: 5500; loop: true">
+            <!-- Center -->
+            <a-sphere radius="0.07" color="#FFFFCC" position="0 0 0"></a-sphere>
+            <!-- Petals -->
+            <a-sphere radius="0.11" color="#FFE4E1" position="0.14 0 0" scale="1.5 1 1"></a-sphere>
+            <a-sphere radius="0.11" color="#FFFFFF" position="-0.14 0 0" scale="1.5 1 1"></a-sphere>
+            <a-sphere radius="0.11" color="#FFE4E1" position="0 0.14 0" scale="1 1.5 1"></a-sphere>
+            <a-sphere radius="0.11" color="#FFFFFF" position="0 -0.14 0" scale="1 1.5 1"></a-sphere>
+            <a-sphere radius="0.11" color="#FFC0CB" position="0 0 0.08" scale="1 1 1.5"></a-sphere>
         </a-entity>
 
-        <!-- BIG Apple Blossom 5 - LEFT CLOSE - transforms to red apple -->
-        <a-entity position="-1.5 0 -2.5">
-            <a-sphere
-                id="blossom5"
-                radius="0.4"
-                color="#FFB6C1"
-                opacity="0.85"
-                transparent="true"
-                animation="property: position; to: -1.5 -2 -2.5; dur: 6500; loop: true; easing: easeInOutQuad"
-                animation__rotate="property: rotation; to: -360 -360 0; dur: 6500; loop: true">
-            </a-sphere>
+        <!-- Blossom 5 - will transform to apple -->
+        <a-entity id="blossom5" position="-1.5 0 -2.5"
+                  animation="property: position; to: -1.5 -3 -2.5; dur: 6500; loop: true; easing: easeInOutQuad"
+                  animation__rotate="property: rotation; to: 0 360 0; dur: 6500; loop: true">
+            <!-- Center -->
+            <a-sphere radius="0.08" color="#FFFF99" position="0 0 0" id="b5center"></a-sphere>
+            <!-- Petals -->
+            <a-sphere radius="0.12" color="#FFB6C1" position="0.16 0 0" scale="1.5 1 1" id="b5p1"></a-sphere>
+            <a-sphere radius="0.12" color="#FFC0CB" position="-0.16 0 0" scale="1.5 1 1" id="b5p2"></a-sphere>
+            <a-sphere radius="0.12" color="#FFB6C1" position="0 0.16 0" scale="1 1.5 1" id="b5p3"></a-sphere>
+            <a-sphere radius="0.12" color="#FFC0CB" position="0 -0.16 0" scale="1 1.5 1" id="b5p4"></a-sphere>
+            <a-sphere radius="0.12" color="#FFFFFF" position="0 0 0.09" scale="1 1 1.5" id="b5p5"></a-sphere>
         </a-entity>
 
-        <!-- BIG Apple Blossom 6 - UP AND CENTER -->
-        <a-entity position="0 2 -4">
-            <a-sphere
-                radius="0.5"
-                color="#FFC0CB"
-                opacity="0.7"
-                transparent="true"
-                animation="property: position; to: 0 -2 -4; dur: 9000; loop: true; easing: easeInOutQuad"
-                animation__rotate="property: rotation; to: 360 0 360; dur: 9000; loop: true">
-            </a-sphere>
+        <!-- Blossom 6 -->
+        <a-entity id="blossom6" position="0 2 -4"
+                  animation="property: position; to: 0 -3 -4; dur: 9000; loop: true; easing: easeInOutQuad"
+                  animation__rotate="property: rotation; to: 0 360 0; dur: 9000; loop: true">
+            <!-- Center -->
+            <a-sphere radius="0.1" color="#FFFFCC" position="0 0 0"></a-sphere>
+            <!-- Petals -->
+            <a-sphere radius="0.15" color="#FFC0CB" position="0.2 0 0" scale="1.5 1 1"></a-sphere>
+            <a-sphere radius="0.15" color="#FFE4E1" position="-0.2 0 0" scale="1.5 1 1"></a-sphere>
+            <a-sphere radius="0.15" color="#FFC0CB" position="0 0.2 0" scale="1 1.5 1"></a-sphere>
+            <a-sphere radius="0.15" color="#FFE4E1" position="0 -0.2 0" scale="1 1.5 1"></a-sphere>
+            <a-sphere radius="0.15" color="#FFFFFF" position="0 0 0.12" scale="1 1 1.5"></a-sphere>
         </a-entity>
 
-        <!-- BIG Apple Blossom 7 - RIGHT SIDE - transforms to green apple -->
-        <a-entity position="1.5 1 -2">
-            <a-sphere
-                id="blossom7"
-                radius="0.42"
-                color="#FFFFFF"
-                opacity="0.75"
-                transparent="true"
-                animation="property: position; to: 1.5 -2 -2; dur: 7500; loop: true; easing: easeInOutQuad"
-                animation__rotate="property: rotation; to: -360 360 -360; dur: 7500; loop: true">
-            </a-sphere>
+        <!-- Blossom 7 - will transform to apple -->
+        <a-entity id="blossom7" position="1.5 1 -2"
+                  animation="property: position; to: 1.5 -3 -2; dur: 7500; loop: true; easing: easeInOutQuad"
+                  animation__rotate="property: rotation; to: 0 -360 0; dur: 7500; loop: true">
+            <!-- Center -->
+            <a-sphere radius="0.09" color="#FFFF99" position="0 0 0" id="b7center"></a-sphere>
+            <!-- Petals -->
+            <a-sphere radius="0.13" color="#FFFFFF" position="0.17 0 0" scale="1.5 1 1" id="b7p1"></a-sphere>
+            <a-sphere radius="0.13" color="#FFE4E1" position="-0.17 0 0" scale="1.5 1 1" id="b7p2"></a-sphere>
+            <a-sphere radius="0.13" color="#FFFFFF" position="0 0.17 0" scale="1 1.5 1" id="b7p3"></a-sphere>
+            <a-sphere radius="0.13" color="#FFE4E1" position="0 -0.17 0" scale="1 1.5 1" id="b7p4"></a-sphere>
+            <a-sphere radius="0.13" color="#FFC0CB" position="0 0 0.1" scale="1 1 1.5" id="b7p5"></a-sphere>
         </a-entity>
 
-        <!-- EXTRA BIG Apple Blossom 8 - SUPER CLOSE -->
-        <a-entity position="-0.5 0.5 -1.5">
-            <a-sphere
-                radius="0.6"
-                color="#FFB6C1"
-                opacity="0.65"
-                transparent="true"
-                animation="property: position; to: -0.5 -2 -1.5; dur: 10000; loop: true; easing: easeInOutQuad"
-                animation__rotate="property: rotation; to: 360 360 0; dur: 10000; loop: true">
-            </a-sphere>
-        </a-entity>
-
-        <!-- Additional blossoms for more coverage -->
-        <a-entity position="1 0 -1">
-            <a-sphere
-                radius="0.3"
-                color="#FFC0CB"
-                opacity="0.7"
-                transparent="true"
-                animation="property: position; to: 1 -2 -1; dur: 5000; loop: true; easing: easeInOutQuad">
-            </a-sphere>
-        </a-entity>
-
-        <a-entity position="-1 1 -1.5">
-            <a-sphere
-                id="blossom10"
-                radius="0.35"
-                color="#FFFFFF"
-                opacity="0.8"
-                transparent="true"
-                animation="property: position; to: -1 -2 -1.5; dur: 6000; loop: true; easing: easeInOutQuad">
-            </a-sphere>
+        <!-- Big Blossom 8 -->
+        <a-entity id="blossom8" position="-0.5 0.5 -1.5"
+                  animation="property: position; to: -0.5 -3 -1.5; dur: 10000; loop: true; easing: easeInOutQuad"
+                  animation__rotate="property: rotation; to: 0 360 0; dur: 10000; loop: true">
+            <!-- Center -->
+            <a-sphere radius="0.12" color="#FFFFCC" position="0 0 0"></a-sphere>
+            <!-- Petals -->
+            <a-sphere radius="0.18" color="#FFB6C1" position="0.24 0 0" scale="1.5 1 1"></a-sphere>
+            <a-sphere radius="0.18" color="#FFC0CB" position="-0.24 0 0" scale="1.5 1 1"></a-sphere>
+            <a-sphere radius="0.18" color="#FFB6C1" position="0 0.24 0" scale="1 1.5 1"></a-sphere>
+            <a-sphere radius="0.18" color="#FFC0CB" position="0 -0.24 0" scale="1 1.5 1"></a-sphere>
+            <a-sphere radius="0.18" color="#FFFFFF" position="0 0 0.15" scale="1 1 1.5"></a-sphere>
         </a-entity>
 
         <a-entity camera></a-entity>
@@ -206,74 +196,110 @@
         }
         
         function transformToApples() {
-            // Transform blossom 1 to red apple
-            const blossom1 = document.querySelector('#blossom1');
-            if (blossom1) {
-                blossom1.setAttribute('color', '#DC143C');
-                blossom1.setAttribute('radius', '0.55');
+            // Transform blossom 3 to green apple
+            const b3 = document.querySelector('#blossom3');
+            if (b3) {
+                // Hide petals
+                document.querySelector('#b3p1').setAttribute('visible', false);
+                document.querySelector('#b3p2').setAttribute('visible', false);
+                document.querySelector('#b3p3').setAttribute('visible', false);
+                document.querySelector('#b3p4').setAttribute('visible', false);
+                document.querySelector('#b3p5').setAttribute('visible', false);
+                // Make center into apple
+                const center3 = document.querySelector('#b3center');
+                center3.setAttribute('radius', '0.35');
+                center3.setAttribute('color', '#90EE90');
+                // Add apple stem
+                const stem3 = document.createElement('a-cylinder');
+                stem3.setAttribute('radius', '0.02');
+                stem3.setAttribute('height', '0.1');
+                stem3.setAttribute('color', '#8B4513');
+                stem3.setAttribute('position', '0 0.35 0');
+                b3.appendChild(stem3);
             }
             
-            // Transform blossom 3 to green apple
+            // Transform blossom 5 to red apple after delay
             setTimeout(() => {
-                const blossom3 = document.querySelector('#blossom3');
-                if (blossom3) {
-                    blossom3.setAttribute('color', '#90EE90');
-                    blossom3.setAttribute('radius', '0.5');
+                const b5 = document.querySelector('#blossom5');
+                if (b5) {
+                    // Hide petals
+                    document.querySelector('#b5p1').setAttribute('visible', false);
+                    document.querySelector('#b5p2').setAttribute('visible', false);
+                    document.querySelector('#b5p3').setAttribute('visible', false);
+                    document.querySelector('#b5p4').setAttribute('visible', false);
+                    document.querySelector('#b5p5').setAttribute('visible', false);
+                    // Make center into apple
+                    const center5 = document.querySelector('#b5center');
+                    center5.setAttribute('radius', '0.32');
+                    center5.setAttribute('color', '#DC143C');
+                    // Add apple stem
+                    const stem5 = document.createElement('a-cylinder');
+                    stem5.setAttribute('radius', '0.02');
+                    stem5.setAttribute('height', '0.1');
+                    stem5.setAttribute('color', '#8B4513');
+                    stem5.setAttribute('position', '0 0.32 0');
+                    b5.appendChild(stem5);
                 }
-            }, 1500);
-            
-            // Transform blossom 5 to red apple
-            setTimeout(() => {
-                const blossom5 = document.querySelector('#blossom5');
-                if (blossom5) {
-                    blossom5.setAttribute('color', '#FF6B6B');
-                    blossom5.setAttribute('radius', '0.45');
-                }
-            }, 2500);
+            }, 2000);
             
             // Transform blossom 7 to green apple
             setTimeout(() => {
-                const blossom7 = document.querySelector('#blossom7');
-                if (blossom7) {
-                    blossom7.setAttribute('color', '#98FB98');
-                    blossom7.setAttribute('radius', '0.47');
+                const b7 = document.querySelector('#blossom7');
+                if (b7) {
+                    // Hide petals
+                    document.querySelector('#b7p1').setAttribute('visible', false);
+                    document.querySelector('#b7p2').setAttribute('visible', false);
+                    document.querySelector('#b7p3').setAttribute('visible', false);
+                    document.querySelector('#b7p4').setAttribute('visible', false);
+                    document.querySelector('#b7p5').setAttribute('visible', false);
+                    // Make center into apple
+                    const center7 = document.querySelector('#b7center');
+                    center7.setAttribute('radius', '0.33');
+                    center7.setAttribute('color', '#98FB98');
+                    // Add apple stem
+                    const stem7 = document.createElement('a-cylinder');
+                    stem7.setAttribute('radius', '0.02');
+                    stem7.setAttribute('height', '0.1');
+                    stem7.setAttribute('color', '#8B4513');
+                    stem7.setAttribute('position', '0 0.33 0');
+                    b7.appendChild(stem7);
                 }
             }, 3500);
             
-            // Transform blossom 10 to red apple
+            // Cycle back to blossoms
             setTimeout(() => {
-                const blossom10 = document.querySelector('#blossom10');
-                if (blossom10) {
-                    blossom10.setAttribute('color', '#FF69B4');
-                    blossom10.setAttribute('radius', '0.4');
-                }
-            }, 4000);
-            
-            // Repeat the cycle
-            setTimeout(() => {
-                // Turn apples back to blossoms
-                if (blossom1) {
-                    blossom1.setAttribute('color', '#FFB6C1');
-                    blossom1.setAttribute('radius', '0.5');
-                }
-                if (blossom3) {
-                    blossom3.setAttribute('color', '#FFC0CB');
-                    blossom3.setAttribute('radius', '0.45');
-                }
-                if (blossom5) {
-                    blossom5.setAttribute('color', '#FFB6C1');
-                    blossom5.setAttribute('radius', '0.4');
-                }
-                if (blossom7) {
-                    blossom7.setAttribute('color', '#FFFFFF');
-                    blossom7.setAttribute('radius', '0.42');
-                }
-                if (blossom10) {
-                    blossom10.setAttribute('color', '#FFFFFF');
-                    blossom10.setAttribute('radius', '0.35');
-                }
+                // Reset blossom 3
+                document.querySelector('#b3p1').setAttribute('visible', true);
+                document.querySelector('#b3p2').setAttribute('visible', true);
+                document.querySelector('#b3p3').setAttribute('visible', true);
+                document.querySelector('#b3p4').setAttribute('visible', true);
+                document.querySelector('#b3p5').setAttribute('visible', true);
+                document.querySelector('#b3center').setAttribute('radius', '0.09');
+                document.querySelector('#b3center').setAttribute('color', '#FFFF99');
                 
-                // Start the transformation cycle again
+                // Reset blossom 5
+                document.querySelector('#b5p1').setAttribute('visible', true);
+                document.querySelector('#b5p2').setAttribute('visible', true);
+                document.querySelector('#b5p3').setAttribute('visible', true);
+                document.querySelector('#b5p4').setAttribute('visible', true);
+                document.querySelector('#b5p5').setAttribute('visible', true);
+                document.querySelector('#b5center').setAttribute('radius', '0.08');
+                document.querySelector('#b5center').setAttribute('color', '#FFFF99');
+                
+                // Reset blossom 7
+                document.querySelector('#b7p1').setAttribute('visible', true);
+                document.querySelector('#b7p2').setAttribute('visible', true);
+                document.querySelector('#b7p3').setAttribute('visible', true);
+                document.querySelector('#b7p4').setAttribute('visible', true);
+                document.querySelector('#b7p5').setAttribute('visible', true);
+                document.querySelector('#b7center').setAttribute('radius', '0.09');
+                document.querySelector('#b7center').setAttribute('color', '#FFFF99');
+                
+                // Remove stems
+                const stems = document.querySelectorAll('a-cylinder');
+                stems.forEach(stem => stem.remove());
+                
+                // Start cycle again
                 setTimeout(transformToApples, 3000);
             }, 10000);
         }
